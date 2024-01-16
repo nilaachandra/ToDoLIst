@@ -28,9 +28,15 @@ const currentDay = () => {
 };
 currentDay();
 
+//function to print Current date
 const whatDate = () => {
-    let todaysDate = new Date();
-    todaysDate.toLocaleDateString;
-    console.log(todaysDate)
-}
-whatDate()
+  let todaysDate = new Date();
+  const dd = document.getElementById("dd");
+  const mm = document.getElementById("mm");
+  const yyyy = document.getElementById("yyyy");
+  dd.innerHTML = todaysDate.getDate();
+  mm.innerHTML = "0" + (todaysDate.getMonth() + 1);
+  yyyy.innerHTML = todaysDate.getFullYear();
+  console.log(todaysDate.getDate());
+};
+whatDate();
