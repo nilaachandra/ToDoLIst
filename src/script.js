@@ -1,12 +1,12 @@
 console.log("Hello");
-
-// const nameInput = () => {
-//   const name = document.getElementById("name");
-//   let userName = prompt("Enter Your Name!");
-//   console.log(userName);
-//   name.innerHTML = userName;
-// };
-// nameInput();
+//function to take Username
+const nameInput = () => {
+  const name = document.getElementById("name");
+  let userName = prompt("Enter Your Name!");
+  console.log(userName);
+  name.innerHTML = userName;
+};
+nameInput();
 
 //function to print Current Day of the week
 const currentDay = () => {
