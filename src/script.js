@@ -1,12 +1,12 @@
 console.log("Hello");
 //function to take Username
-const nameInput = () => {
-  const name = document.getElementById("name");
-  let userName = prompt("Enter Your Name!");
-  console.log(userName);
-  name.innerHTML = userName;
-};
-nameInput();
+// const nameInput = () => {
+//   const name = document.getElementById("name");
+//   let userName = prompt("Enter Your Name!");
+//   console.log(userName);
+//   name.innerHTML = userName;
+// };
+// nameInput();
 
 //function to print Current Day of the week
 const currentDay = () => {
@@ -40,3 +40,12 @@ const whatDate = () => {
   console.log(todaysDate.getDate());
 };
 whatDate();
+
+const addIcon = document.getElementById('addIcon');
+const addTodoContainer = document.getElementById('addTodoContainer');
+
+
+addIcon.addEventListener('click',revealAdder = () => {
+  addTodoContainer.style.height = '6rem';
+  console.log('dfd')
+})

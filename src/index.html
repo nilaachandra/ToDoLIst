@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="root.css">
     <title>ToDoList</title>
 </head>
+
 <body>
-    <div class="main p-4 flex flex-col justify-center items-center">
+    <div class="main p-4 flex flex-col justify-center items-center gap-4">
         <h1 class="font-bold text-center text-4xl text-blue-700">To Do List</h1>
-        <div class="date h-[70vh] w-2/3 border border-black border-solid p-4">
-            <div class="flex justify-between items-center w-full"><h1 id="weekday" class="font-bold text-blue-700">Day</h1>
-                <h1 id="time" class="font-bold text-blue-700">
+        <div class="date h-[70vh] w-full md:w-2/3 border border-black border-solid p-4">
+            <div class="flex justify-between items-center w-full">
+                <h1 id="weekday" class="font-bold text-blue-700 text-sm md:text-xl">Day</h1>
+                <h1 id="time" class="font-bold text-blue-700 text-sm md:text-xl">
                     <span id="dd">DD</span>/
                     <span id="mm">MM</span>/
                     <span id="yyyy">YYYY</span>
                 </h1>
             </div>
-
             <h1 class="text-2xl font-bold">Welcome, <span id="name"></span>!</h1>
-            <h1></h1>
+            <div class="gap-4 flex justify-start items-start w-full h-[3rem] overflow-hidden flex-col border border-solid border-red-500
+            transition-all duration-[0.5s] ease-in">
+                <div class="todos w-full flex justify-between" id="addTodoContainer">
+                    <h2 class="font-bold text-3xl">Add a Todo...</h2>
+                    <i class="ri-file-add-fill text-4xl" id="addIcon"></i>
+                </div>
+                <div class="flex justify-between items-center mt-2 w-full">
+                    <input type="text" name="todo" id="todo" placeholder="e.g. Procrastinate Whole Day"
+                        class="outline outline-1 w-[86%] text-center h-10">
+                    <input type="submit" id="submit" value="Add"
+                        class="h-10 outline outline-1 bg-black text-white w-20 rounded-sm">
+                </div>
+            </div>
+
+
+
+
+
         </div>
-
-
-
-
-
-    </div>
-    <script src="./script.js"></script>
+        <script src="./script.js"></script>
 </body>
+
 </html>
