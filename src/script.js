@@ -60,7 +60,11 @@ const todoAdder = document.getElementById('submit');
 
 const addATodo = (e) => { 
   e.preventDefault() //prevents the page from refreshing after a add button is being clicked
-  console.log("dfdfdfd")
+  let textValue = todoInput.value
+  console.log(textValue)
+  todos.push(textValue)
+  todoContainer.innerHTML = ''
+  console.log(todos)
 }
 
 todoAdder.addEventListener('click', addATodo)
@@ -72,7 +76,7 @@ const getTodos = () => {
         class="todos justify-between items-center w-full border border-solid
        border-black rounded-sm p-4 flex flex-col md:flex md:flex-row ">
       <div class="w-2/3">
-        <input type="text" value="${i+1}.${todo}" readonly class="w-full text-black font-bold" id="todoEdit">
+        <input type="text" value="${i+1}.${todo}" readonly class="w-full text-black font-bold text-sm" id="todoEdit">
       </div>
         <div class="flex gap-4">
           <i class="ri-edit-fill text-2xl cursor-pointer text-blue-500"></i>
