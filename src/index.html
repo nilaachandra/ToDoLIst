@@ -23,20 +23,26 @@
                 </h1>
             </div>
             <h1 class="text-2xl font-bold">Welcome, <span id="name"></span>!</h1>
-            <div class="gap-4 flex justify-start items-start w-full h-[3rem] overflow-hidden flex-col border border-solid border-red-500
-            transition-all duration-[0.5s] ease-in">
-                <div class="todos w-full flex justify-between" id="addTodoContainer">
+            <div class="gap-4 flex justify-start items-start w-full h-[3rem] overflow-hidden flex-col pb-4 pl-2"
+                id="addTodoContainer">
+                <div class="todos w-full flex justify-between">
                     <h2 class="font-bold text-3xl">Add a Todo...</h2>
                     <i class="ri-file-add-fill text-4xl" id="addIcon"></i>
                 </div>
                 <div class="flex justify-between items-center mt-2 w-full">
-                    <input type="text" name="todo" id="todo" placeholder="e.g. Procrastinate Whole Day"
+                    <input type="text" name="todo" id="todoInput" placeholder="e.g. Procrastinate Whole Day"
                         class="outline outline-1 w-[86%] text-center h-10">
-                    <input type="submit" id="submit" value="Add"
+                    <button type="input" id="submit"
                         class="h-10 outline outline-1 bg-black text-white w-20 rounded-sm">
+                        Add
+                    </button>
                 </div>
             </div>
+            <h1 class="text-xl font-bold">My Todos</h1>
+            <div class="flex flex-col w-full" id="todoContainer">
+                
 
+            </div>
 
 
 

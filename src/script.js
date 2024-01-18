@@ -41,11 +41,48 @@ const whatDate = () => {
 };
 whatDate();
 
-const addIcon = document.getElementById('addIcon');
-const addTodoContainer = document.getElementById('addTodoContainer');
+const addIcon = document.getElementById("addIcon");
+const addTodoContainer = document.getElementById("addTodoContainer");
+
+addIcon.addEventListener(
+  "click",
+  (revealAdder = () => {
+    addTodoContainer.classList.toggle("h-min");
+  })
+);
+
+//adding todos
+let todos = ['Procastinate Whole Day'];
+const todoContainer = document.getElementById("todoContainer");
+const todoInput = document.getElementById('todoInput');
+const todoAdder = document.getElementById('submit');
 
 
-addIcon.addEventListener('click',revealAdder = () => {
-  addTodoContainer.style.height = '6rem';
-  console.log('dfd')
-})
+const addATodo = (e) => { 
+  e.preventDefault() //prevents the page from refreshing after a add button is being clicked
+  console.log("dfdfdfd")
+}
+
+todoAdder.addEventListener('click', addATodo)
+
+const getTodos = () => {
+  todos.forEach((todo, i) => {
+    let newHTML = 
+    `<div
+        class="todos justify-between items-center w-full border border-solid
+       border-black rounded-sm p-4 flex flex-col md:flex md:flex-row ">
+      <div class="w-2/3">
+        <input type="text" value="${i+1}.${todo}" readonly class="w-full text-black font-bold" id="todoEdit">
+      </div>
+        <div class="flex gap-4">
+          <i class="ri-edit-fill text-2xl cursor-pointer text-blue-500"></i>
+          <i class="ri-delete-bin-6-fill text-2xl cursor-pointer text-red-700"></i>
+          <i class="ri-check-double-fill text-2xl cursor-pointer text-green-700"></i>
+        </div>
+    </div>`;
+
+todoContainer.innerHTML = newHTML
+
+  });
+};
+getTodos()
