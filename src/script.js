@@ -52,41 +52,22 @@ addIcon.addEventListener(
 );
 
 //adding todos
-let todos = ['Procastinate Whole Day'];
+let todos = JSON.parse(localStorage.getItem('todos')) || [];
 const todoContainer = document.getElementById("todoContainer");
 const todoInput = document.getElementById('todoInput');
-const todoAdder = document.getElementById('submit');
+const todoAdder = document.getElementById('todoForm');
 
+todoAdder.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let theTodo = todoInput.value;
 
-const addATodo = (e) => { 
-  e.preventDefault() //prevents the page from refreshing after a add button is being clicked
-  let textValue = todoInput.value
-  console.log(textValue)
-  todos.push(textValue)
-  todoContainer.innerHTML = ''
-  console.log(todos)
-}
+  const todo = {
+    content: theTodo,
+    createdAt : new Date().toLocaleTimeString()
+  }
 
-todoAdder.addEventListener('click', addATodo)
-
-const getTodos = () => {
-  todos.forEach((todo, i) => {
-    let newHTML = 
-    `<div
-        class="todos justify-between items-center w-full border border-solid
-       border-black rounded-sm p-4 flex flex-col md:flex md:flex-row ">
-      <div class="w-2/3">
-        <input type="text" value="${i+1}.${todo}" readonly class="w-full text-black font-bold text-sm" id="todoEdit">
-      </div>
-        <div class="flex gap-4">
-          <i class="ri-edit-fill text-2xl cursor-pointer text-blue-500"></i>
-          <i class="ri-delete-bin-6-fill text-2xl cursor-pointer text-red-700"></i>
-          <i class="ri-check-double-fill text-2xl cursor-pointer text-green-700"></i>
-        </div>
-    </div>`;
-
-todoContainer.innerHTML = newHTML
-
-  });
-};
-getTodos()
+  todos.push(todo)
+  localStorage.setItem('todos',JSON.stringify(todos))
+  e.target.reset()
+})
+console.log(todos)

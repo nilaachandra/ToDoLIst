@@ -29,14 +29,12 @@
                     <h2 class="font-bold text-3xl">Add a Todo...</h2>
                     <i class="ri-file-add-fill text-4xl" id="addIcon"></i>
                 </div>
-                <div class="flex justify-between items-center mt-2 w-full">
+                <form class="flex justify-between items-center mt-2 w-full" id="todoForm">
                     <input type="text" name="todo" id="todoInput" placeholder="e.g. Procrastinate Whole Day"
                         class="outline outline-1 w-[86%] text-center h-10">
-                    <button type="submit" id="submit"
-                        class="h-10 outline outline-1 bg-black text-white w-20 rounded-sm">
-                        Add
-                    </button>
-                </div>
+                    <input type="submit" id="submit"
+                        class="h-10 outline outline-1 bg-black text-white w-20 rounded-sm" value="Add">
+                </form>
             </div>
             <h1 class="text-xl font-bold">My Todos</h1>
             <div class="flex flex-col w-full" id="todoContainer">
